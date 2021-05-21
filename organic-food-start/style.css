@@ -1,0 +1,156 @@
+/* https://developer.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/ */
+.offscreen {
+  clip-path: inset(100%);
+  clip: rect(1px 1px 1px 1px); /* IE 6/7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; /* added line */
+  width: 1px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* font is loaded locally. You can use these fonts in the template */
+@font-face {
+  font-family: Oswald;
+  src: url('./fonts/Oswald/Oswald-Regular.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Oswald;
+  src: url('./fonts/Oswald/Oswald-ExtraLight.ttf') format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Oswald;
+  src: url('./fonts/Oswald/Oswald-Light.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Oswald;
+  src: url('./fonts/Oswald/Oswald-Bold.ttf') format('truetype');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Lato;
+  src: url('./fonts/Lato/Lato-Regular.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Lato;
+  src: url('./fonts/Lato/Lato-Light.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Lato;
+  src: url('./fonts/Lato/Lato-Bold.ttf') format('truetype');
+  font-weight: 600;
+}
+
+body {
+  font-weight: 300;
+  font-family: 'Oswald', sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: lightgrey;
+}
+
+.menu-button {
+  font-size: 30px;
+  display: none;
+}
+
+.menu-checkbox {
+  display: none;
+}
+
+.search {
+  width: 250px;
+  background-color: lightgray;
+  color: black;
+}
+
+.search:hover {
+  width: 10px;
+  background-color: lightgreen;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+.menu-item {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 10px;
+}
+
+.menu-item a {
+  color: white;
+  font-size: 1.8rem;
+  text-decoration: none;
+  flex-grow: 1;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .menu-button {
+    display: block;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .menu-checkbox:checked ~ nav {
+    display: block;
+  }
+
+  ul {
+    flex-direction: column;
+  }
+
+  .menu-item {
+    margin: 10px 0;
+    width: 100%;
+  }
+}
+
+.wrapper {
+  background: url(./img/banner_image_1.jpg) no-repeat center 1px/100%;
+  background-size: cover;
+  padding: 200px;
+  filter: brightness(50%);
+}
+
+h1 {
+  font-size: 6vw;
+  color: white;
+}
+
+.container {
+  background: url(./img/banner_image_2.jpg) no-repeat center 1px/100%;
+  background-size: cover;
+  padding: 200px;
+}
